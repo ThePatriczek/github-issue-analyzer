@@ -6,10 +6,10 @@ import org.kohsuke.github.GitHubBuilder;
 import java.io.IOException;
 
 public class GithubClient {
-    GitHub github;
+    final public GitHub github;
 
     public GithubClient() throws IOException {
-        String token = "49223e6c31128bbf667709e5b405cf7551bae9b3";
+        String token = "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"; //? https://github.com/thepatriczek personal read-only token
         github = new GitHubBuilder().withOAuthToken(token).build();
     }
 }
