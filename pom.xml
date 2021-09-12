@@ -3,4 +3,12 @@
     <groupId>com.vsb</groupId>
     <artifactId>github-issue-analyzer</artifactId>
     <version>1</version>
+    <!-- https://mvnrepository.com/artifact/org.kohsuke/github-api -->
+    <dependencies>
+        <dependency>
+            <groupId>org.kohsuke</groupId>
+            <artifactId>github-api</artifactId>
+            <version>1.133</version>
+        </dependency>
+    </dependencies>
 </project>
