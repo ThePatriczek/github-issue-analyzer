@@ -1,10 +1,9 @@
-package com.vsb.repository;
+package repository;
 
-import com.vsb.client.github.GithubClient;
 import org.kohsuke.github.*;
-
 import java.io.IOException;
 import java.util.List;
+import client.github.GithubClient;
 
 public class GithubRepository {
     final GithubClient githubClient = new GithubClient();

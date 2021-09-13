@@ -1,7 +1,6 @@
-package com.vsb.repository;
+package repository;
 
 import org.kohsuke.github.*;
-
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Date;
