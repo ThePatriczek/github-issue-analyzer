@@ -18,4 +18,14 @@ public class IssueController {
     public ResponseEntity<GHIssue> createIssue(@RequestBody GHIssue issue) {
         return new ResponseEntity<GHIssue>(new GHIssue(), HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/issues/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<GHIssue> updateIssue(@PathVariable("id") String id, @RequestBody GHIssue issue) {
+        return new ResponseEntity<GHIssue>(new GHIssue(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/issues/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<GHIssue> deleteIssue(@PathVariable("id") String id) {
+        return new ResponseEntity<GHIssue>(new GHIssue(), HttpStatus.OK);
+    }
 }
