@@ -13,6 +13,10 @@ public class GithubRepository {
         repository = githubClient.github.getRepository(name);
     }
 
+        public GithubRepository(final String owner, final String repo) throws IOException {
+        repository = githubClient.github.getRepository(owner + "/" + repo);
+    }
+
     public String getLanguage() {
         return repository.getLanguage();
     }
