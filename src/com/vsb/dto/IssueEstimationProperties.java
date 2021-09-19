@@ -31,13 +31,15 @@ public class IssueEstimationProperties {
         return closedAt;
     }
 
-    // TODO Return List<GHUser> or List<CustomDTO>
-    public List<String> getParticipants() throws IOException {
-        List<String> participantNames = new ArrayList<>();
+    public List<User> getParticipants() throws IOException {
+        List<User> users = new ArrayList<>();
         for (GHUser participant : this.participants) {
-            participantNames.add(participant.getName());
+            String name = participant.getName();
+            String avatarUrl = participant.getAvatarUrl();
+            String login = participant.getLogin();
+            users.add(new User(login,name, avatarUrl));
         }
 
-        return participantNames;
+        return users;
     }
 }
