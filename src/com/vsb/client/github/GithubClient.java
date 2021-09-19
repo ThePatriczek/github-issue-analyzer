@@ -8,7 +8,7 @@ public class GithubClient {
         final public GitHub github;
 
     public GithubClient() throws IOException {
-        String token = "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"; //? https://github.com/thepatriczek personal read-only token
+        String token = "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"; //? https://github.com/thepatriczek personal read-only token
         github = new GitHubBuilder().withOAuthToken(token).build();
     }
 }

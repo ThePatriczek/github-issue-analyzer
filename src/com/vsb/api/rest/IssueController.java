@@ -16,7 +16,7 @@ public class IssueController {
     
     @RequestMapping(value = "/estimateProperties/{owner}/{repo}", method = RequestMethod.GET)
     public ResponseEntity<IssueEstimationProperties> issuePropsEstimates(@PathVariable("owner") final String owner, @PathVariable("repo") final String repo) throws IOException {
-        var estimatedProperties = new EstimationService().estimateProperties(owner, repo);
+        final IssueEstimationProperties estimatedProperties = new EstimationService().estimateProperties(owner, repo);
         return new ResponseEntity<IssueEstimationProperties>(estimatedProperties, HttpStatus.OK);
     }
 }
