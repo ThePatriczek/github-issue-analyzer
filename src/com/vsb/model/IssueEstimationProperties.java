@@ -1,4 +1,4 @@
-package dto;
+package model;
 
 import org.kohsuke.github.GHLabel;
 import org.kohsuke.github.GHUser;

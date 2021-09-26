@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 import client.github.GithubClient;
-import dto.Repository;
-import dto.User;
+import model.Repository;
+import model.User;
 import repository.UserRepository;
 
 public class UserService {

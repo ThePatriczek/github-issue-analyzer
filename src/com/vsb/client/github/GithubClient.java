@@ -11,7 +11,7 @@ public class GithubClient {
         final public GitHub github;
 
     public GithubClient() throws IOException {
-        String token = "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"; //? https://github.com/thepatriczek personal read-only token
+        String token = "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"; //? https://github.com/thepatriczek personal read-only token
         github = new GitHubBuilder().withOAuthToken(token).build();
     }
 

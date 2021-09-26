@@ -6,7 +6,7 @@ import java.util.List;
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHIssueState;
 
-import dto.IssueEstimationProperties;
+import model.IssueEstimationProperties;
 import repository.GithubRepository;
 
 public class EstimationService {

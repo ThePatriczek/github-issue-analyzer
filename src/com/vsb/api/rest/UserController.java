@@ -6,8 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import dto.Repository;
-import dto.User;
+import model.Repository;
+import model.User;
 import service.UserService;
 import java.util.List;
 
