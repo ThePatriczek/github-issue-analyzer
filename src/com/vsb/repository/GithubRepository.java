@@ -21,6 +21,18 @@ public class GithubRepository {
         return repository.getLanguage();
     }
 
+    public String getOwner() {
+        return repository.getOwnerName();
+    }
+    
+    public String getName() {
+        return repository.getName();
+    }
+
+    public String getDescription() {
+        return repository.getDescription();
+    }
+
     public GHIssue getIssue(final int id) throws IOException {
         return repository.getIssue(id);
     }
@@ -39,5 +51,9 @@ public class GithubRepository {
 
     public PagedIterable<GHLabel> getLabels() throws IOException {
         return repository.listLabels();
+    }
+    
+    public int getStars() throws IOException {
+        return repository.getStargazersCount();
     }
 }
