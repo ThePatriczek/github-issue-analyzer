@@ -11,7 +11,6 @@ public class RepositoryRaw {
     final private String language;
     final private List<String> topics;
 
-    //constructor
     public RepositoryRaw(String owner, String name, String description, String language, List<String> topics) {
         this.owner = owner;
         this.name = name;
