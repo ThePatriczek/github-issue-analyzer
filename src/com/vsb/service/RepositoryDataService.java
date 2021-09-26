@@ -11,6 +11,12 @@ import model.RepositoryRaw;
 
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvException;
+
+import org.kohsuke.github.GHRepository;
+import org.kohsuke.github.PagedSearchIterable;
+
+import client.github.GithubClient;
+
 import com.opencsv.CSVReader;
 
 public class RepositoryDataService {
@@ -22,7 +28,9 @@ public class RepositoryDataService {
             repositoryRaw.getName(), 
             repositoryRaw.getDescription(),
             repositoryRaw.getLanguage(), 
-            repositoryRaw.getTopics().toString()};
+            repositoryRaw.getTopics().toString(),
+            String.valueOf(repositoryRaw.getStars()),
+        };
 
         CSVWriter writer = new CSVWriter(new FileWriter(fileName, true));
         writer.writeNext(line, true);
@@ -37,11 +45,22 @@ public class RepositoryDataService {
         try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
             List<String[]> lines = reader.readAll();
             lines.forEach(line -> {
-                RepositoryRaw repositoryRaw = new RepositoryRaw(line[0], line[1], line[2], line[3], Arrays.asList(line[4].split(",")));
+                RepositoryRaw repositoryRaw = new RepositoryRaw(line[0], line[1], line[2], line[3], Arrays.asList(line[4].split(",")), Integer.parseInt(line[5]));
                 repositories.add(repositoryRaw);
             });
         }
 
         return repositories;
+    }
+
+    public void writeTheMostStarredRepositories() throws IOException {
+        PagedSearchIterable<GHRepository> theMostStarredRepositories = new GithubClient().searchTheMostStarredRepositories();
+        theMostStarredRepositories.forEach(repository -> {
+            try {
+                writeNewRepository(new RepositoryRaw(repository.getOwner().getLogin(), repository.getName(), repository.getDescription(), repository.getLanguage(), repository.listTopics(), repository.getStargazersCount()));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }

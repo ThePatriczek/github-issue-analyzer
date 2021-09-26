@@ -26,6 +26,12 @@ public class RepositoryController {
         return new ResponseEntity<String[]>(addedRepository, HttpStatus.OK);
     }
 
+        @RequestMapping(value = "/write/TheMostStarredRepositories", method = RequestMethod.POST)
+    public ResponseEntity<Boolean> writeTheMostStarredRepositories() throws IOException {
+        new RepositoryDataService().writeTheMostStarredRepositories();
+        return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/read/all", method = RequestMethod.GET)
     public ResponseEntity<List<RepositoryRaw>> read() throws IOException, CsvException {
         final List<RepositoryRaw> repositories = new RepositoryDataService().readRepositories();

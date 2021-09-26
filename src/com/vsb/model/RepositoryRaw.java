@@ -10,13 +10,15 @@ public class RepositoryRaw {
     final private String description;
     final private String language;
     final private List<String> topics;
+    final private int stars;
 
-    public RepositoryRaw(String owner, String name, String description, String language, List<String> topics) {
+    public RepositoryRaw(String owner, String name, String description, String language, List<String> topics, int stars) {
         this.owner = owner;
         this.name = name;
         this.description = description;
         this.language = language;
         this.topics = topics;
+        this.stars = stars;
     }
 
     public RepositoryRaw(GithubRepository repo) throws IOException {
@@ -25,6 +27,7 @@ public class RepositoryRaw {
         this.description = repo.getDescription();
         this.language = repo.getLanguage();
         this.topics = repo.getTopics();
+        this.stars = repo.getStars();
     }
 
     public String getOwner() {
@@ -45,5 +48,9 @@ public class RepositoryRaw {
     
     public List<String> getTopics() {
         return topics;
+    }
+
+        public int getStars() {
+        return stars;
     }
 }
