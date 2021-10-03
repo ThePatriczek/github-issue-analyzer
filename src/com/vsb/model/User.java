@@ -1,25 +1,3 @@
-package model;
-
-public class User {
-    final private String login;
-    final private String name;
-    final private String avatarUrl;
-
-    public User(String login, String name, String avatarUrl) {
-        this.name = name;
-        this.avatarUrl = avatarUrl;
-        this.login = login;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public String getName() {
-        return name;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:6c7e6d07ad2d7ce62b8e8e631623fd78bdd6bdc7dd7702ec3e4cad52762e827e
+size 483

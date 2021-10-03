@@ -1,31 +1,3 @@
-package model;
-
-public class Repository {
-    final private String name;
-    final private String description;
-    final private String language;
-    final private int stars;
-
-    public Repository(String name, String description, String language, int stars) {
-        this.name = name;
-        this.description = description;
-        this.language = language;
-        this.stars = stars;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-    
-    public String getLanguage() {
-        return language;
-    }
-
-    public int getStars() {
-        return stars;
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:088e412d4511e8502bf29f7cf876c9cc2683408a6826a1f6c9f79a897a79f2ca
+size 654

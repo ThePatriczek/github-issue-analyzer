@@ -1,11 +1,3 @@
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication(scanBasePackages = {"com", "api"})
-public class Main {
-
-    public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(Main.class);
-        app.run(args);
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:7677c0bb44f8858bccfedf8e22d81131e306cac410655b36937e6da73a1c81be
+size 343
